@@ -56,50 +56,50 @@ public class Test {
 			i++;
 		}*/
 		
-		SimpleDateFormat m_dateFormat = (SimpleDateFormat)DateFormat.getDateInstance(DateFormat.SHORT, new Locale("es_VE"));
-		String sFormat = m_dateFormat.toPattern();
-		//	some short formats have only one M and/or d (e.g. ths US)
-		if (sFormat.indexOf("MM") == -1 || sFormat.indexOf("dd") == -1)
-			{
-			sFormat = sFormat.replaceFirst("d+", "dd");
-			sFormat = sFormat.replaceFirst("M+", "MM");
-		//	log.finer(sFormat + " => " + nFormat);
-			m_dateFormat.applyPattern(sFormat);
-		}
-		//	Unknown short format => use JDBC
-		if (m_dateFormat.toPattern().length() != 8)
-			m_dateFormat.applyPattern("yyyy-MM-dd");
-
-		//	4 digit year
-		if (m_dateFormat.toPattern().indexOf("yyyy") == -1)
-		{
-			sFormat = m_dateFormat.toPattern();
-			String nFormat = "";
-			for (int i = 0; i < sFormat.length(); i++)
-			{
-				if (sFormat.charAt(i) == 'y')
-					nFormat += "yy";
-				else
-					nFormat += sFormat.charAt(i);
-			}
-			m_dateFormat.applyPattern(nFormat);
-		}
+//		SimpleDateFormat m_dateFormat = (SimpleDateFormat)DateFormat.getDateInstance(DateFormat.SHORT, new Locale("es_VE"));
+//		String sFormat = m_dateFormat.toPattern();
+//		//	some short formats have only one M and/or d (e.g. ths US)
+//		if (sFormat.indexOf("MM") == -1 || sFormat.indexOf("dd") == -1)
+//			{
+//			sFormat = sFormat.replaceFirst("d+", "dd");
+//			sFormat = sFormat.replaceFirst("M+", "MM");
+//		//	log.finer(sFormat + " => " + nFormat);
+//			m_dateFormat.applyPattern(sFormat);
+//		}
+//		//	Unknown short format => use JDBC
+//		if (m_dateFormat.toPattern().length() != 8)
+//			m_dateFormat.applyPattern("yyyy-MM-dd");
+//
+//		//	4 digit year
+//		if (m_dateFormat.toPattern().indexOf("yyyy") == -1)
+//		{
+//			sFormat = m_dateFormat.toPattern();
+//			String nFormat = "";
+//			for (int i = 0; i < sFormat.length(); i++)
+//			{
+//				if (sFormat.charAt(i) == 'y')
+//					nFormat += "yy";
+//				else
+//					nFormat += sFormat.charAt(i);
+//			}
+//			m_dateFormat.applyPattern(nFormat);
+//		}
 		//	
-		m_dateFormat.setLenient(true);
+//		m_dateFormat.setLenient(true);
 		//09-16 12:26:02.550: W/System.err(20682): 1404086400000
 		//09-16 12:26:02.550: W/System.err(20682): Sun Jun 29 19:30:00 GMT-04:30 2014
 		//09-16 12:26:02.550: W/System.err(20682): dd/MM/yyyy
 		//09-16 12:26:02.550: W/System.err(20682): 29/06/2014
-		String strDate = "2014-06-30 00:00:00";
-		System.out.println(strDate);
-		Date date = new Date(1404086400000L);
-		System.out.println(date);
-		System.out.println("sFormat = " + sFormat);
-		System.out.println(m_dateFormat.format(date));
-		System.out.println(m_dateFormat.format(1404086400000L));
-		//	
-		System.out.println(date);
-		System.out.println(m_dateFormat.toPattern());
+//		String strDate = "2014-06-30 00:00:00";
+//		System.out.println(strDate);
+//		Date date = new Date(1404086400000L);
+//		System.out.println(date);
+//		System.out.println("sFormat = " + sFormat);
+//		System.out.println(m_dateFormat.format(date));
+//		System.out.println(m_dateFormat.format(1404086400000L));
+//		//	
+//		System.out.println(date);
+//		System.out.println(m_dateFormat.toPattern());
 		/*String a = "B1";
 		System.out.println(a);
 		System.out.println(a.substring(1));
@@ -172,6 +172,8 @@ public class Test {
 		
 		//String sql = "SELCET * FROM ASHDAGSKDHAS SDSJ <MARK_WHERE>*AD_Column.AD_Column_ID = @AD_Column_ID@";
 		//System.out.println(sql.substring(sql.indexOf("<MARK_WHERE>") + "<MARK_WHERE>".length()));
+		
+		
 	}
 
 }
