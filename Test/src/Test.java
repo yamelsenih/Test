@@ -1,15 +1,3 @@
-import java.io.File;
-import java.io.IOException;
-import java.io.InputStream;
-import java.math.BigDecimal;
-import java.text.DateFormat;
-import java.text.DecimalFormat;
-import java.text.SimpleDateFormat;
-import java.util.Calendar;
-import java.util.Date;
-import java.util.GregorianCalendar;
-import java.util.Locale;
-
 /**
  * 
  */
@@ -173,7 +161,7 @@ public class Test {
 		//String sql = "SELCET * FROM ASHDAGSKDHAS SDSJ <MARK_WHERE>*AD_Column.AD_Column_ID = @AD_Column_ID@";
 		//System.out.println(sql.substring(sql.indexOf("<MARK_WHERE>") + "<MARK_WHERE>".length()));
 		
-		
+		System.out.println("Hello World");
 	}
 
 }
