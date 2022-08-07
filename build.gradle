@@ -36,19 +36,12 @@ java {
     withSourcesJar()
 }
 
-//signing {
-//    def signingKey = findProperty("signingKey")
-//    def signingPassword = findProperty("signingPassword")
-//    useInMemoryPgpKeys(signingKey, signingPassword)
-//    sign configurations.archives
-//}
-
-def entityType = 'D'
+def entityType = 'CUST'
 version = System.getenv("ADEMIERE_LIBRARY_VERSION")
 
 jar {
     manifest {
-        attributes("Implementation-Title": "Adempiere Project Management",
+        attributes("Implementation-Title": "A Test of Project",
                    "Implementation-Version": version, 
                    "EntityType": entityType)
     }
@@ -67,13 +60,13 @@ publishing {
     publications {
         mavenJava(MavenPublication) {
         	groupId 'io.github.adempiere'
-            artifactId 'migration'
+            artifactId 'test'
             version
            	from components.java
            	pom {
-                name = 'Migration'
-                description = 'Migration of ADempiere.'
-                url = 'http://adempiere.io/'
+                name = 'Test For Gradle'
+                description = 'Test for publish Gradle .'
+                url = 'http://erpya.com/'
                 licenses {
                     license {
                         name = 'GNU General Public License, version 2'
@@ -88,9 +81,9 @@ publishing {
                     }
                 }
                 scm {
-                    connection = 'scm:git:git://github.com/adempiere/adempiere.git'
-                    developerConnection = 'scm:git:ssh://github.com/adempiere/adempiere.git'
-                    url = 'http://github.com/adempiere/adempiere'
+                    connection = 'scm:git:git://github.com/erpcya/Test.git'
+                    developerConnection = 'scm:git:ssh://github.com/erpcya/Test.git'
+                    url = 'http://github.com/erpcya/Test'
                 }
             }
 		}
