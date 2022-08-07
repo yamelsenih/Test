@@ -1,7 +1,7 @@
 # This is a basic workflow to help you get started with Actions
 # This file was contributed by Carlos Parada and Yamel Senih from ERP Consultores y Asociados, C.A
 
-name: ADempiere Build With gradle
+name:Release With gradle
 
 # Controls when the action will run. 
 on:
@@ -15,7 +15,7 @@ jobs:
 
   # Build dist application backend
   build-app:
-    name: Build with gradle
+    name: Release with gradle
     runs-on: ubuntu-latest
     steps:
       - name: Check out the repo
